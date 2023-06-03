@@ -1,5 +1,5 @@
 import './App.css';
-import socketIO from "socket.io-client";
+
 import Join from './components/Join/Join';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chat from './components/Chat/Chat';

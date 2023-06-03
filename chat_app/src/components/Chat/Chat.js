@@ -6,7 +6,6 @@ import Message from '../Message/Message';
 import sendLogo from '../../images/send.png';                                                                                                                                                                                                                                                                                                              
 import ReactScrollToBottom from "react-scroll-to-bottom"
 import closeIcon from "../../images/closeIcon.png";
-
 const ENDPOINT="http://localhost:5000/"
 let socket;
 const Chat = () => {
@@ -43,7 +42,7 @@ const Chat = () => {
       socket.emit('disconnected');
       socket.off();
     }
-  },[]);
+  });
   useEffect(()=>{
     socket.on('sendMessage',(data)=>{
       setMessages([...messages,data]);
@@ -54,7 +53,8 @@ const Chat = () => {
     }
   },[messages])
     return (
-    <div className='chatPage'>
+
+            <div className='chatPage'>
       <div className='chatContainer'>
         <div className='header'>
           <h2>C chat</h2>
@@ -69,6 +69,8 @@ const Chat = () => {
                 </div>
             </div>
         </div>
+
+
   )
 }
 
